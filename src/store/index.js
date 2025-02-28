@@ -27,35 +27,43 @@ export default new Vuex.Store({
     mainMenu: [
       {
         id: 1,
-        title: "Why weight matters for patients with T2D",
-        anchorRef: "#Matters",
-        sectionName: "Why weight matters for patients with T2D",
+        title: "ACR Results",
+        anchorRef: "#ACR",
+        sectionName: "ACR Results",
         Subsection: "-",
-        dataLayerSectionName: "Why Weight Matters"
+        dataLayerSectionName: "-",
+        icon: '',
+        color: ''
       },
       {
         id: 2,
-        title: "Barriers to managing weight in patients with T2D",
-        anchorRef: "#Barriers",
-        sectionName: "Barriers to managing weight in patients with T2D",
+        title: "Joint Symptom Results",
+        anchorRef: "#Joint",
+        sectionName: "Joint Symptom Results",
         Subsection: "-",
-        dataLayerSectionName: "Barriers to Managing"
+        dataLayerSectionName: "-",
+        icon: '',
+        color: ''
       },
       {
         id: 3,
-        title: "Importance of early glycemic control and weight management in T2D",
-        anchorRef: "#Importance",
-        sectionName: "Importance of early glycemic control and weight management in T2D",
+        title: "Access & Support",
+        anchorRef: "#Access",
+        sectionName: "Access & Support",
         Subsection: "-",
-        dataLayerSectionName: "Importance of Early Glycemic Control"
+        dataLayerSectionName: "-",
+        icon: '',
+        color: ''
       },
       {
         id: 4,
-        title: "Resource Hub",
-        anchorRef: "#Resource",
-        sectionName: "Resource Hub",
+        title: "Prescribing Information",
+        anchorRef: "#PI",
+        sectionName: "Prescribing Information",
         Subsection: "-",
-        dataLayerSectionName: "Resource Hub"
+        dataLayerSectionName: "-",
+        icon: 'pdfIcon',
+        color: 'primary'
       },
 
     ]

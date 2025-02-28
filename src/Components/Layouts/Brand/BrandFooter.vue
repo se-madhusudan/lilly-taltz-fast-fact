@@ -15,10 +15,8 @@
             </div>
           </div>
         </div>
-        <div class="contentWrap">
-          <div class="brandFooter__disclaimer">
-            <p>This <i>Endocrinology Advisor Expert Perspectives</i> is produced as a basic reminder of important information for healthcare professionals. Readers are advised to consult manufacturers and specialists if questions arise about specific products, treatments, or diseases. The publisher and editors do not assume liability for any errors or omissions. <i>Endocrinology Advisor</i> and <i>Expert Perspectives</i> are registered trademarks of Haymarket Media, Inc.</p>
-          </div>
+        <div class="brandFooter__disclaimer">
+          <p>This <i>Rheumatology Advisor Fast Facts</i> is produced as a basic reminder of important information for healthcare professionals. Readers are advised to consult manufacturers and specialists if questions arise about specific products, treatments, or diseases. The publisher and editors do not assume liability for any errors or omissions. <i>Rheumatollogy Advisor</i> and <i>Fast Facts</i> are registered trademarks of Haymarket Media, Inc.</p>
         </div>
       </div>
       <div class="brandFooter__lower">

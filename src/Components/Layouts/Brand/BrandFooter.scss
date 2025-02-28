@@ -47,15 +47,14 @@
   
     &__disclaimer {
       border-top: 1px solid $bdr;
-      padding: 24px 0;
+      padding: 15px 16px;
       text-align: center;
+      width: 100%;
       @include media('>=phone'){
-        margin: 0;
         text-align: left;
       }
-      @include media('>tablet') {
-        padding: 32px 0;
-        margin: 0;
+      @include media('>tablet'){
+        padding: 15px 48px;
       }
       p {
         color: $bodyCopy;

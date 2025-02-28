@@ -2,6 +2,7 @@
 <script>
 import { mapState } from "vuex";
 import ScrollDepthAnalytics from "@/mixins/ScrollDepthAnalytics";
+import HeroSection from '@/Components/Blocks/Hero/Hero';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
@@ -10,7 +11,7 @@ gsap.registerPlugin(DrawSVGPlugin);
 export default {
   name: "HomePage",
   components: {
-
+    HeroSection,
   },
   data() {
     return {

@@ -14,7 +14,7 @@
             <nav>
               <ul class="header">
                 <li v-for="link of mainMenu" :key="link">
-                  <a :class="['header-link', 'header-link--' + link.id, { active: activeSection === link.id },]" @click="scrollToAnchor(link.anchorRef, link.id), sectionClickDataLayer(link.dataLayerSectionName, 'section-click', '-')" v-html="link.title"></a>
+                  <a :class="['header-link', 'header-link--' + link.id, { active: activeSection === link.id },]" @click="scrollToAnchor(link.anchorRef, link.id), sectionClickDataLayer(link.dataLayerSectionName, 'section-click', '-')"><span :class="link.icon"></span><span :class="link.color" v-html="link.title"></span></a>
                 </li>
               </ul>
             </nav>
@@ -24,7 +24,7 @@
               <div class="menu-overlay" @click="toggleMenu"></div>
               <ul class="header__dropdown">
                 <li v-for="link of mainMenu" :key="link" :class="['header-link','header-link--' + link.id,{ active: activeSection === link.id },]" @click="scrollToAnchor(link.anchorRef, link.id), sectionClickDataLayer(link.dataLayerSectionName, 'section-click', '-')">
-                  <a v-html="link.title"></a>
+                  <a><span :class="link.icon"></span><span v-html="link.title"></span></a>
                 </li>
               </ul>
             </div>
