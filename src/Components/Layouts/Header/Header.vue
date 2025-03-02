@@ -1,10 +1,10 @@
 <template>
     <div class="headerMenuWrap">
-      <!--div class="mobileSectionHighlight">
+      <div class="mobileSectionHighlight">
         <ul>
-          <li v-for="link of mainMenu" :class="['header-link', 'header-link--' + link.id, { active: activeSection == link.id },]" v-html="link.title"></li>
+          <li v-for="link of mainMenu" :key="link" :class="['header-link', 'header-link--' + link.id, { active: activeSection == link.id },]"><span :class="link.icon"></span><span v-html="link.title"></span></li>
         </ul>
-      </div-->
+      </div>
       <div class="headerWrap">
         <div class="headerWrap__left">
           <img src="@/Assets/Img/logos/logo-taltz.svg" alt="Taltz Logo" />
@@ -145,7 +145,7 @@
         this.$store.commit("SET_ACTIVE_SECTION", 0);
       }
   
-      var sectionviewarray = [".heroSection","#Matters","#Barriers", "#Importance", "#Resource", ".references "];
+      var sectionviewarray = [".hero","#ACR","#Joint", "#Access", "#PI", ".references"];
       for (let i = 0; i < sectionviewarray.length; i++) {
         ScrollTrigger.create({
           trigger: sectionviewarray[i],
@@ -156,19 +156,19 @@
              var currentsection = i - 1;
              this.$store.commit("SET_ACTIVE_SECTION", currentsection);
             if (currentsection == 1 || currentsection == 2 || currentsection == 3) {
-              //document.querySelector(".mobileSectionHighlight").classList.add('active');
+              document.querySelector(".mobileSectionHighlight").classList.add('active');
             }
             else {
-             // document.querySelector(".mobileSectionHighlight").classList.remove('active');
+             document.querySelector(".mobileSectionHighlight").classList.remove('active');
             } 
           },
           onEnter: () => {
             this.$store.commit("SET_ACTIVE_SECTION", i);
             if (i == 1 || i == 2 || i == 3) {
-              //document.querySelector(".mobileSectionHighlight").classList.add('active');
+              document.querySelector(".mobileSectionHighlight").classList.add('active');
             }
             else {
-              //document.querySelector(".mobileSectionHighlight").classList.remove('active');
+              document.querySelector(".mobileSectionHighlight").classList.remove('active');
             }
           },
         });

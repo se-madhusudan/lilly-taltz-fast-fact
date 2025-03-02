@@ -251,7 +251,7 @@
   }
   
   .mobileSectionHighlight {
-    top: 101px;
+    top: 100px;
     z-index: 94;
     width: 100%;
     color: $white;
@@ -259,7 +259,7 @@
     position: fixed;
     padding: 10px 0;
     text-align: center;
-    background: $primaryColor;
+    background: $secondaryColor;
     transition:  all .5s ease;
     opacity: 0;
     visibility: hidden;
@@ -284,6 +284,14 @@
         line-height: $lineHeight100;
         font-weight: $fontWeightSemiBold;
         transform: translate(-50%, -50%);
+
+        .pdfIcon {
+          background: url("../../../Assets/Img/icons/icon-pdf-mobile.svg");
+          display: inline-block;
+          width: 16px;
+          height: 18px;
+          margin-right: 10px;
+        }
   
         &.active {
           opacity: 1;
@@ -291,9 +299,9 @@
         }
       }
     }
-  
+
     @include media('>=phone') {
-      top: 118px;
+      top: 100px;
     }
     
     @include media('>=tablet') {

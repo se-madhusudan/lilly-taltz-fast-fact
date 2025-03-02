@@ -3,6 +3,9 @@
 import { mapState } from "vuex";
 import ScrollDepthAnalytics from "@/mixins/ScrollDepthAnalytics";
 import HeroSection from '@/Components/Blocks/Hero/Hero';
+import ACR from '@/Components/Blocks/ACR/ACR';
+import Joint from '@/Components/Blocks/Joint/Joint';
+import Access from '@/Components/Blocks/Access/Access';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
@@ -12,6 +15,9 @@ export default {
   name: "HomePage",
   components: {
     HeroSection,
+    ACR,
+    Joint,
+    Access
   },
   data() {
     return {
