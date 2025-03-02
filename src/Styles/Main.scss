@@ -67,15 +67,11 @@ body {
   height: 100%;
   box-sizing: content-box;
   overflow: hidden;
-  padding-top: 76px;
+  padding-top: 100px;
   max-width: 1440px;
 
   @include media ('>tablet') {
-    padding-top: 100px;
-  }
-
-  @include media('>bigTablet'){
-    padding-top: 117px;
+    padding-top: 122px;
   }
 
   @include media ('>mediumDesktop') {

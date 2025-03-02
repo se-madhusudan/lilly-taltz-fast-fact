@@ -4,7 +4,7 @@
   export default {
     name: 'Hero',
     props: {
-        HeroData : Object
+        heroData : Object
     }
   }
 </script>

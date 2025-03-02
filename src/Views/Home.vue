@@ -15,6 +15,12 @@ export default {
   },
   data() {
     return {
+      hero: {
+        heroData: {
+          title: 'Psoriatic Arthritis Efficacy',
+          des: 'An 1L-17A antagonist with rapid and sustained efficacy in the joints and <span class="text-noWrap">skin<sup>1-13</sup></span>'
+        }
+      },
       isActiveOverlay: false,
       deadInteractivity: true,
       currentSection: 0,
