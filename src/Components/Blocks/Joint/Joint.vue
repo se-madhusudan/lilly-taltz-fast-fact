@@ -4,7 +4,7 @@
   export default {
     name: 'Joint',
     props: {
-        JointData : Object
+      jointData : Object
     }
   }
 </script>

@@ -1,7 +1,5 @@
 #Joint {
-    padding: 20px;
-    background-color: goldenrod;
-    p{
-        color: $white;
-    }
+    padding: 23px 0 23px;
+    background-color: $sectionBg;
+    border-bottom: 2px solid $primaryColor;
 }

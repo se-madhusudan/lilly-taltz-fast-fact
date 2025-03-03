@@ -4,7 +4,7 @@
   export default {
     name: 'Access',
     props: {
-        AccessData : Object
+        accessData : Object
     }
   }
 </script>

@@ -137,3 +137,30 @@ sup {
     display: none;
   }
 }
+
+.title {
+  display: flex;
+  align-items: center;
+
+  &__arrow {
+    width: 17px;
+    height: 17.5px;
+    background: url('../Assets/Img/icons/icon-dbl-right-arrow.svg');
+    margin-right: 5px;
+  }
+
+  &__text {
+    color: $secondaryColor;
+    font-size: $fontSize25;
+    font-weight: $fontWeightBold;
+    line-height: $lineHeight30;
+  }
+}
+
+.subTitle {
+  color: $secondaryColor;
+  font-size: $fontSize26;
+  font-weight: $fontWeightBold;
+  line-height: $lineHeight130;
+  margin-top: 20px; 
+}

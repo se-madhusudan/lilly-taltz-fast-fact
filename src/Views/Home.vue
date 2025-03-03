@@ -27,6 +27,26 @@ export default {
           des: 'An 1L-17A antagonist with rapid and sustained efficacy in the joints and <span class="text-noWrap">skin<sup>1-13</sup></span>'
         }
       },
+      acr: {
+        acrData: {
+          title: 'ACR Results',
+        
+        }
+      },
+      joint: {
+        jointData: {
+          title: 'Joint Symptom Results',
+          subTitle: 'Consistent joint symptom results sustained through year 3<sup>6-7</sup>'
+        
+        }
+      },
+      access: {
+        accessData: {
+          title: 'Access & Support',
+          subTitle: 'Getting Patients Started & Resources'
+        
+        }
+      },
       isActiveOverlay: false,
       deadInteractivity: true,
       currentSection: 0,
