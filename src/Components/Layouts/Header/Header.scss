@@ -1,8 +1,6 @@
 .header {
     display: none;
     align-items: center;
-    justify-content: flex-end;
-    width: 100%;
     z-index: 99;
   
     @include media('>=bigTabletMedium') {
@@ -36,33 +34,9 @@
           text-decoration: none;
           border-bottom: 1px solid $secondaryColor;
         }
-
-        .pdfIcon {
-          background: url("../../../Assets/Img/icons/icon-pdf.svg");
-          width: 16px;
-          height: 18px;
-          margin-right: 10px;
-        }
       }
 
       &:nth-of-type(1) {
-        a {
-          margin-left: 0;
-        }
-      }
-      &:nth-of-type(4) {
-        margin-left: 463px;
-        
-        @include media('<=mediumDesktop') {
-          margin-left: 42.5%;
-        }
-        @include media('<=smallDesktop') {
-          margin-left: 27.5%;
-        }
-        
-        @include media('<=bigTabletMedium') {
-          margin-left: 30.5%;
-        }
         a {
           margin-left: 0;
         }
@@ -129,9 +103,27 @@
         @include media('>tablet', '<bigTabletMedium'){
           top: 122px;
         }
-        // @include media('>=mediumDesktop'){
-        //   top: 120px;
-        // }
+      }
+
+      .piMobile {
+        display: flex;
+        justify-content: center;
+        box-shadow: none;
+        padding: 20px 0;
+
+        .pdfIcon {
+          background: url("../../../Assets/Img/icons/icon-pdf-mobile.svg");
+          width: 16px;
+          height: 18px;
+          margin-right: 10px;
+        }
+
+        a {
+          color: $white;
+          text-decoration: none;
+          font-weight: $fontWeightBold;
+          font-size: $fontSize16;
+        }
       }
     }
   
@@ -162,12 +154,6 @@
           &:hover{
             text-decoration: none;
           }
-          .pdfIcon {
-            background: url("../../../Assets/Img/icons/icon-pdf-mobile.svg");
-            width: 16px;
-            height: 18px;
-            margin-right: 10px;
-          }
         }
   
         &.header-link--2, &.header-link--3{
@@ -175,10 +161,6 @@
             max-width: 288px;
             margin: 0 auto;
           }
-        }
-  
-        &:last-child {
-            border-bottom: none;
         }
       }
     }
@@ -245,7 +227,35 @@
       .menu {
         width: 100%;
 
-       
+        nav {
+          display: flex;
+          justify-content: space-between;
+
+          .pi {
+            display: flex;
+            align-items: center;
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            a {
+              text-decoration: none;
+              color: $primaryColor;
+            }
+
+            .pdfIcon {
+              background: url("../../../Assets/Img/icons/icon-pdf.svg");
+              width: 16px;
+              height: 18px;
+              margin-right: 10px;
+            }
+
+            @include media('<bigTabletMedium') {
+              display: none;
+            }
+          }
+        }
       }
     }
   }

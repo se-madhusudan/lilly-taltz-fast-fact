@@ -17,6 +17,7 @@
                   <a :class="['header-link', 'header-link--' + link.id, { active: activeSection === link.id },]" @click="scrollToAnchor(link.anchorRef, link.id), sectionClickDataLayer(link.dataLayerSectionName, 'section-click', '-')"><span :class="link.icon"></span><span :class="link.color" v-html="link.title"></span></a>
                 </li>
               </ul>
+              <div class="pi"><span :class="piData.icon"></span><a href="#" target="_blank"><span :class="piData.color" v-html="piData.title"></span></a></div>
             </nav>
             <button class="header__menuToggle" @click="toggleMenu">
             </button>
@@ -27,6 +28,7 @@
                   <a><span :class="link.icon"></span><span v-html="link.title"></span></a>
                 </li>
               </ul>
+              <div class="header__dropdown piMobile"><span :class="piData.icon"></span><a href="#" target="_blank"><span :class="piData.color" v-html="piData.title"></span></a></div>
             </div>
           </div>
         </div>
@@ -61,6 +63,7 @@
         "mobileMenuState",
         "activeSection",
         "mainMenu",
+        "piData"
       ]),
       routes() {
         return this.$router.options.routes;

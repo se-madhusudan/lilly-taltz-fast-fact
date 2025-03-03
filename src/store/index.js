@@ -55,18 +55,15 @@ export default new Vuex.Store({
         icon: '',
         color: ''
       },
-      {
-        id: 4,
-        title: "Prescribing Information",
-        anchorRef: "#PI",
-        sectionName: "Prescribing Information",
-        Subsection: "-",
-        dataLayerSectionName: "-",
-        icon: 'pdfIcon',
-        color: 'primary'
-      },
 
-    ]
+    ],
+    piData: {
+      title: "Prescribing Information",
+      sectionName: "Prescribing Information",
+      Subsection: "-",
+      dataLayerSectionName: "-",
+      icon: 'pdfIcon',
+    }
   },
 
   modules: {
