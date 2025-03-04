@@ -2,5 +2,12 @@
     <div class="contentWrap">
         <h2 class="title"><span class="title__arrow"></span><span class="title__text" v-html="accessData.title"></span></h2>
         <h3 class="subTitle" v-html="accessData.subTitle"></h3>
+        <ul>
+            <li v-for="item in accessData.listItem" :key="item" v-html="item"></li>
+        </ul>
+        <p class="des" v-html="accessData.des"></p>
+        <h3 class="subTitle" v-html="accessData.subTitle2"></h3>
+        <p class="des" v-for="data in accessData.des2" :key="data" v-html="data"></p>
+        <p class="footnote" v-html="accessData.footnote"></p>
     </div>
 </div>

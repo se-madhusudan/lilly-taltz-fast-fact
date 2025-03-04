@@ -163,6 +163,10 @@ sup {
   font-weight: $fontWeightBold;
   line-height: $lineHeight130;
   margin: 20px 0; 
+
+  @include media('<phone') {
+    font-size: $fontSize24;
+  }
 }
 
 .primary {

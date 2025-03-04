@@ -95,8 +95,20 @@ export default {
       access: {
         accessData: {
           title: 'Access & Support',
-          subTitle: 'Getting Patients Started & Resources'
-        
+          subTitle: 'Getting Patients Started & Resources',
+          listItem: [
+            'Taltz Together Enrollment Form',
+            'Formulary access',
+            'PA Resource Guide',
+            'Specialty Pharmacy Partners'
+          ],
+          des: 'Use these resources to help get your patients started with Taltz',
+          subTitle2: 'SPIRIT-P1 and -P2 Trial Designs<sup>1,3-5</sup>',
+          des2: [
+            'SPIRIT-P1 (N=417) and SPIRIT-P2 (N=363) were phase 3, randomized, double-blind, placebo-controlled trials to evaluate the efficacy and safety of Taltz compared with placebo in patients with active psoriatic arthritis. Patients in SPIRIT-P1 were biologic-naive. Patients in SPIRIT-P2 were TNFi-experienced, having had an inadequate response and/or intolerance to 1 or 2 prior TNFis. In both trials, the primary efficacy endpoint was the proportion of patients achieving ACR20 response at week 24. All patients were ≥18 years of age and had ≥3 swollen and ≥3 tender joints. Patients were randomized to placebo (n=106) (n=118) or Taltz 80 mg every 2 weeks* (n=103) (n=123) or every 4 weeks (n=107) (n=122) following a 160 mg starting dose. ',
+            'In SPIRIT-P1, an active reference arm of Humira® (adalimumab) 40 mg every 2 weeks (n=101) was included. Patients in all study arms were allowed to continue taking stable background medications during the trial. Inadequate responders (as defined by blinded criteria of <20% improvement in tender and in swollen joint counts) at week 16 received rescue therapy and were analyzed as nonresponders after week 16 until the primary endpoint. After receiving rescue therapy, inadequate responders in the placebo and Humira arms were re-randomized to Taltz 80 mg every 2 or 4 weeks. NRI methods were used for categorical efficacy analysis during the double-blind treatment period.'
+          ],
+          footnote: '*Taltz 80 mg every 2 weeks is not approved dose for PsA.'
         }
       },
       isActiveOverlay: false,
