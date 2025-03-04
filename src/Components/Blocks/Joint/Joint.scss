@@ -2,4 +2,35 @@
     padding: 23px 0 23px;
     background-color: $sectionBg;
     border-bottom: 2px solid $primaryColor;
+
+    .des {
+        color: $listItem;
+        font-size: $fontSize18;
+        font-weight: $fontWeightNormal;
+        line-height: $lineHeight140;
+        margin-top: 15px;
+
+        &:nth-of-type(1) {
+            margin-top: 20px;
+
+            @include media('<phone') {
+                margin-top: 15px;
+            }
+        }
+
+        @include media('<phone') {
+            font-size: $fontSize16;
+        }
+    }
+
+    .footnote {
+        color:  $des;
+        font-size: $fontSize12;
+        font-weight: $fontWeightNormal;
+        line-height: $lineHeight140;
+        margin-top: 20px;
+    }
+    .footnote-1 {
+        padding-bottom: 10px;
+    }
 }

@@ -1,5 +1,108 @@
 #ACR {
-    padding: 25px 0 28px;
-    background-color: $white;
-    border-bottom: 2px solid $primaryColor;
+  padding: 25px 0 28px;
+  background-color: $white;
+  border-bottom: 2px solid $primaryColor;
+
+  .des {
+    color: $des;
+    font-size: $fontSize22;
+    line-height: $lineHeight135;
+    font-weight: $fontWeightNormal;
+    margin: 20px 0;
+
+    @include media("<phone") {
+      font-size: $fontSize20;
+    }
+  }
+
+  .list {
+    &__heading {
+      color: $primaryColor;
+      font-size: $fontSize18;
+      font-weight: $fontWeightSemiBold;
+      line-height: $lineHeight140;
+      padding-left: 5px;
+
+      &:nth-of-type(2) {
+        margin: 10px 0 20px;
+      }
+    }
+
+    &__item {
+      color: $listItem;
+      font-size: $fontSize18;
+      font-weight: $fontWeightNormal;
+      line-height: $lineHeight140;
+      margin-bottom: 8px;
+
+      @include media('<phone') {
+        font-size: $fontSize16;
+        margin-bottom: 10px;
+      }
+    }
+
+    ul {
+      list-style-type: disc;
+      list-style-position: outside;
+      padding-left: 25px;
+
+      li::marker {
+        color: $primaryColor;
+      }
+    }
+  }
+
+  .scrollDown {
+    color: $des;
+    font-size: $fontSize18;
+    font-weight: $fontWeightBold;
+    line-height: $lineHeight140;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+    margin-top: 15px;
+  }
+
+  .scrollDown:hover {
+    cursor: pointer;
+  }
+
+  .selectText {
+    color: $des;
+    font-size: $fontSize20;
+    font-weight: $fontWeightBold;
+    line-height: $lineHeight140;
+    margin: 20px 0 8px;
+
+    @include media('<phone') {
+        font-size: $fontSize18;
+        margin: 20px 0 5px;
+    }
+  }
+
+  .contraText {
+    color: $des;
+    font-size: $fontSize18;
+    font-weight: $fontWeightBold;
+    line-height: $lineHeight36;
+
+    @include media('<phone') {
+        font-size: $fontSize15;
+    }
+  }
+
+  .taltzText {
+    color: $listItem;
+    font-size: $fontSize18;
+    font-weight: $fontWeightNormal;
+    line-height: $lineHeight140; 
+    margin-top: 10px;
+
+    @include media('<phone') {
+        font-size: $fontSize16;
+    }
+  }
 }

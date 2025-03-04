@@ -1,0 +1,61 @@
+.graphContainer {
+    max-width: 1036px;
+    border-radius: 10px;
+    border: 1px solid $graphBdr;
+    background: $graphBg;
+    box-shadow: $graphShadow;
+
+    &__title {
+        border-radius: 10px 10px 0px 0px;
+        background: $secondaryColor;
+        color: $white;
+        text-align: center;
+        font-size: $fontSize20;
+        font-weight: $fontWeightBold;
+        line-height: $lineHeight24;
+        padding: 10px 0;
+
+        @include media('<phone') {
+            font-size: $fontSize16;
+            padding: 12px;
+        }
+    }
+
+    &__image {
+        padding: 15px 0;
+        margin: 0 auto;
+        max-width: 694px;
+
+        @include media('<phone') {
+            padding: 15px;
+        }
+
+        .desktop {
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+
+            @include media('<phone') {
+                display: none;
+            }
+        }
+
+        .mobile {
+            display: none;
+            width: 100%;
+            margin: 0 auto;
+
+            @include media('<phone') {
+                display: block;
+            }
+        }
+    }
+}
+
+.footnote {
+    padding: 20px 0;
+    color: $des;
+    font-size: $fontSize12;
+    font-weight: $fontWeightNormal;
+    line-height: $lineHeight140;
+}

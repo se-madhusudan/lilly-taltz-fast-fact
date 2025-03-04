@@ -1,9 +1,10 @@
 <div class="graph">
     <div class="graphContainer">
-        <div class="graphContainer__title"> Title</div>
+        <div class="graphContainer__title" v-html="graphData.title"></div>
         <div class="graphContainer__image">
-            <img src="" alt="">
+            <img class="desktop" :src="graphData.desktop" alt="graph">
+            <img class="mobile" :src="graphData.mobile" alt="graph">
         </div>
     </div>
-    <div class="footnote">Footnote</div>
+    <p class="footnote" v-html="graphData.footnote" v-if="graphData.footnote != ''"></p>
 </div>

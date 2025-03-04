@@ -1,5 +1,19 @@
 <div id="ACR">
     <div class="contentWrap">
         <h2 class="title"><span class="title__arrow"></span><span class="title__text" v-html="acrData.title"></span></h2>
+        <p v-html="acrData.des" class="des"></p>
+        <Graph v-for="data in acrData.graphData" :key="data.title" :graphData="data" />
+
+        <div class="list">
+            <h3 class="list__heading" v-for="heading in acrData.listHeading" :key="heading" v-html="heading"></h3>
+            <ul>
+                <li class="list__item" v-for="item in acrData.listItem" :key="item" v-html="item"></li>
+            </ul>
+        </div>
+
+        <a class="scrollDown" @click="scrollToAnchor('#Access')" v-html="acrData.scrollDownText" ></a>
+        <p class="selectText" v-html="acrData.selectText"></p>
+        <p class="contraText" v-html="acrData.contraText"></p>
+        <p class="taltzText" v-html="acrData.taltzText"></p>
     </div>
 </div>

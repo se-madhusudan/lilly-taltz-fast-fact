@@ -2,5 +2,12 @@
     <div class="contentWrap">
         <h2 class="title"><span class="title__arrow"></span><span class="title__text" v-html="jointData.title"></span></h2>
         <h3 class="subTitle" v-html="jointData.subTitle"></h3>
+        <Graph :graphData="jointData.graphData" />
+
+        <p class="des" v-for="text in jointData.des1" v-html="text"></p>
+        <p class="footnote footnote-1" v-html="jointData.footnote1"></p>
+
+        <p class="des" v-for="text in jointData.des2" v-html="text"></p>
+        <p class="footnote footnote-2" v-html="jointData.footnote2"></p>
     </div>
 </div>

@@ -123,7 +123,7 @@ sup {
   }
 
   @include media ('>bigTablet') {
-    max-width: 1136px;
+    max-width: 1036px;
     padding: 0;
   }
 }
@@ -162,5 +162,9 @@ sup {
   font-size: $fontSize26;
   font-weight: $fontWeightBold;
   line-height: $lineHeight130;
-  margin-top: 20px; 
+  margin: 20px 0; 
+}
+
+.primary {
+  color: $primaryColor;
 }
