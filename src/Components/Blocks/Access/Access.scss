@@ -40,6 +40,15 @@
       &:marker {
         color: $primaryColor;
       }
+
+      @include media('<tablet') {
+        flex: 45%;
+        max-width: 100%;
+      }
+      @include media('<phone') {
+        flex: 100%;
+        max-width: 100%;
+      }
     }
   }
 
