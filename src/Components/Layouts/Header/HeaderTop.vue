@@ -1,45 +1,34 @@
 <template>
-    <div class="headerTopWrap">
-      <div :class="{ headerTop: true, '': this.isScrolled }">
-        <img src="@/Assets/Img/logos/logo-rheumatology-advisor.svg" alt="Rheumatology Advisor Logo" />
-        <img src="@/Assets/Img/logos/logo-fast-facts.svg" alt="Fast Facts Logo" />
-      </div>
-    </div>
-  </template>
-  
-  <script>
-  import { mapState } from "vuex";
-  
-  export default {
-    name: "HeaderTop",
-    components: {},
-    data() {
-      return {
-        isOpen: false,
-        isScrolled: false,
-        options: {
-          container: "body",
-          easing: "ease-in",
-          offset: -150,
+  <div class="headerTop">
+    <img
+      v-for="item in headerTop"
+      :key="item.id"
+      :src="item.logo"
+      :alt="item.alt"
+    />
+  </div>
+</template>
+
+<script>
+export default {
+  name: "HeaderTop",
+  data() {
+    return {
+      headerTop: [
+        {
+          id: 1,
+          logo: require("@/Assets/Img/logos/logo-rheumatology-advisor.svg"),
+          alt: "Rheumatology Advisor logo",
         },
-        windowWidth: window.innerWidth,
-      };
-    },
-    mounted() {
-      window.onresize = () => {
-        this.windowWidth = window.innerWidth
-      };
-    },
-    computed: {
-      ...mapState(["userAgent", "urls"]),
-      routes() {
-        return this.$router.options.routes;
-      },
-    },
-    methods: {},
-    watch: {},
-  
-  };
-  </script>
-  
-  <style lang="scss" src="./HeaderTop.scss" scoped></style>
+        {
+          id: 2,
+          logo: require("@/Assets/Img/logos/logo-fast-facts.svg"),
+          alt: "Fast Facts logo",
+        },
+      ],
+    };
+  },
+};
+</script>
+
+<style src="./HeaderTop.scss" lang="scss" scoped></style>
