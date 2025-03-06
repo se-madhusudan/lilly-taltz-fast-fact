@@ -1,6 +1,11 @@
 #Access {
   padding: 23px 0 23px;
   background-color: $white;
+  scroll-margin-top: 120px;
+
+  @include media('<=tablet') {
+    scroll-margin-top: 145px;
+  }
 
   .des {
     color: $listItem;

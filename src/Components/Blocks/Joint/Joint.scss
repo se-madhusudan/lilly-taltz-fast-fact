@@ -2,6 +2,11 @@
     padding: 23px 0 23px;
     background-color: $sectionBg;
     border-bottom: 2px solid $primaryColor;
+    scroll-margin-top: 120px;
+
+    @include media('<=tablet') {
+        scroll-margin-top: 145px;
+    }
 
     .des {
         color: $listItem;
