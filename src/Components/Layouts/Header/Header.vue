@@ -38,7 +38,7 @@ export default {
   data() {
     return {
       showDropdown: false,
-      currentSection: 'ACR Results',
+      currentSection: '',
       logo: require("@/Assets/Img/logos/logo-taltz.svg"),
       menuIcon: require("@/Assets/Img/icons/icon-menu.svg"),
       menuItem: [
