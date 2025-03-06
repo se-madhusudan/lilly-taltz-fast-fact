@@ -7,7 +7,7 @@
       <div class="header__right">
         <nav>
           <ul class="desktopMenu">
-            <li v-for="link in menuItem" :key="link.id" v-html="link.anchorText" @click="scrollTo(link.anchor)"></li>
+            <li v-for="link in menuItem" :key="link.id" v-html="link.anchorText" @click="scrollTo(link.anchor,link.anchorText)" :class="currentSection == link.anchorText ? 'active' : ''"></li>
           </ul>
         </nav>
         <div class="pi">
@@ -21,7 +21,7 @@
     </div>
     <div class="mobileMenu" v-show="showDropdown">
       <ul>
-        <li v-for="link in menuItem" :key="link.id" v-html="link.anchorText" @click="scrollTo(link.anchor)"></li>
+        <li v-for="link in menuItem" :key="link.id" v-html="link.anchorText" @click="scrollTo(link.anchor,link.anchorText)"></li>
       </ul>
       <div class="pi">
         <img :src="pdfIconMobile" alt="icon">
@@ -64,10 +64,11 @@ export default {
     };
   },
   methods: {
-    scrollTo(id) {
+    scrollTo(id, anchorText) {
         const el = document.getElementById(id);
         el.scrollIntoView({behavior: "smooth"});
         this.showDropdown = !this.showDropdown;
+        this.currentSection = anchorText;
     }
   }
 };
