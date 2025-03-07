@@ -3,14 +3,14 @@
     <section :class="{ 'main-wrapp': true}">
       <header>
         <header-top />
-        <header-block />
+        <header-block :navData="navData" @scroll="scrollTo" />
       </header>
       <main>
         <router-view />
       </main>
       <rotate-lock v-if="userAgent.orientation === 'landscape' && userAgent.device.isPhone"></rotate-lock>
       <footer>
-        <brand-footer />
+        <brand-footer :navData="navData" @scroll="scrollTo" />
       </footer>
     </section>
   </div>
@@ -36,6 +36,37 @@ export default {
     "header-block": HeaderBlock,
     BrandFooter,
     basePath: process.env.BASE_URL,
+  },
+  data() {
+    return {
+      navData: {
+        showDropdown: false,
+        currentSection: 0,
+        menuItem: [
+        {
+          id: 1,
+          anchorText: "ACR Results",
+          anchor: "ACR",
+        },
+        {
+          id: 2,
+          anchorText: "Joint Symptom Results",
+          anchor: "Joint",
+        },
+        {
+          id: 3,
+          anchorText: "Access & Support",
+          anchor: "Access",
+        },
+      ],
+      piData: {
+        piText: 'Prescribing Information',
+        url: 'https://www.cancertherapy.com',
+        pdfIconDesktop: require('@/Assets/Img/icons/icon-pdf.svg'),
+        pdfIconMobile: require('@/Assets/Img/icons/icon-pdf-mobile.svg')
+      }
+      }
+    }
   },
   beforeMount() {
     this.$store.commit(
@@ -65,55 +96,41 @@ export default {
     },
   },
   methods: {
-    closeMenu() {
-      this.$store.commit("TOGGLE_MOBILE_MENU", false);
-    },
+    scrollTo(id, anchorText) {
+      const el = document.getElementById(id);
+      el.scrollIntoView({behavior: "smooth"});
+      this.navData.showDropdown = !this.navData.showDropdown;
+      this.navData.currentSection = anchorText;
+    }
   },
   mounted() {
-    var sectionviewarray = [
-      ".heroSection",
-      "#Matters",
-      "#Barriers",
-      "#Importance",
-      "#Resource",
-      "#brandFooter"
-    ];
-    var sectionviewpagename = [
-      "Overview",
-      "Why Weight Matters",
-      "Barriers to Managing",
-      "Importance of Early Glycemic Control",
-      "Resource Hub"
-    ];
-    var sectionviewSECTIONname = ["-", "-", "-"];
+    var sectionviewarray = [".hero","#ACR","#Joint", "#Access"];
     for (let i = 0; i < sectionviewarray.length; i++) {
-      if(i == 0){
-        ScrollTrigger.create({
-          trigger: sectionviewarray[i],
-          start: "center 30%",
-          end: "center 30%",
-          toggleActions: "restart pause reverse pause",
-          onEnterBack: () => {
-            this.sectionClickDataLayer(sectionviewpagename[i],'section-view', sectionviewSECTIONname[i]);
-          },
-          onEnter: () => {
-            this.sectionClickDataLayer(sectionviewpagename[i],'section-view', sectionviewSECTIONname[i]);
-          },
-        });
-      } else {
-        ScrollTrigger.create({
-          trigger: sectionviewarray[i],
-          start: "top 30%",
-          end: "top 30%",
-          toggleActions: "restart pause reverse pause",
-          onEnterBack: () => {
-            this.sectionClickDataLayer(sectionviewpagename[i],'section-view', sectionviewSECTIONname[i]);
-          },
-          onEnter: () => {
-            this.sectionClickDataLayer(sectionviewpagename[i],'section-view', sectionviewSECTIONname[i]);
-          },
-        });
-      }
+      ScrollTrigger.create({
+        trigger: sectionviewarray[i],
+        start: "top 20%",
+        end: "top 20%",
+        toggleActions: "restart pause reverse pause",
+        onEnterBack: () => {
+          var currentsection = i - 1;
+          this.navData.currentSection = currentsection;
+          if (currentsection == 1 || currentsection == 2 || currentsection == 3) {
+            document.querySelector(".sectionHighlight").classList.add('active');
+          }
+          else {
+            document.querySelector(".sectionHighlight").classList.remove('active');
+          } 
+        },
+        onEnter: () => {
+          this.navData.currentSection = i;
+          if (i == 1 || i == 2 || i == 3) {
+            document.querySelector(".sectionHighlight").classList.add('active');
+          }
+          else {
+            document.querySelector(".sectionHighlight").classList.remove('active');
+          }
+        },
+      });
     }
   },
 };

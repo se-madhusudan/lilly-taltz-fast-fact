@@ -78,10 +78,14 @@
       .pi {
         display: flex;
         align-items: center;
-        color: $primaryColor;
-        font-size: $fontSize16;
-        font-weight: $fontWeightSemiBold;
-        line-height: normal;
+
+        a {
+          text-decoration: none;
+          color: $primaryColor;
+          font-size: $fontSize16;
+          font-weight: $fontWeightSemiBold;
+          line-height: normal;
+        }
 
         img {
             margin-right: 10px;
@@ -109,24 +113,35 @@
   .sectionHighlight {
     padding: 10px 0;
     background: $secondaryColor;
-    color: $white;
-    font-size: $fontSize18;
-    font-weight: $fontWeightSemiBold;
-    line-height: $lineHeight22;
-    text-align: center;
     width: 100%;
     display: none;
     position: fixed;
     top: 103px;
     z-index: 999;
-    margin-bottom: 42px;
 
-    @include media('<=tablet') {
+    &.active {
+      @include media('<=tablet') {
         display: block;
+      }
     }
 
     @include media('<=phone') {
         top: 107px;
+    }
+
+    ul {
+      li {
+        color: $white;
+        font-size: $fontSize18;
+        font-weight: $fontWeightSemiBold;
+        line-height: $lineHeight22;
+        text-align: center;
+        display: none;
+
+        &.active {
+          display: block;
+        }
+      }
     }
   }
 
@@ -165,10 +180,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        color: $white;
-        font-size: $fontSize16;
-        font-weight: $fontWeightSemiBold;
-        line-height: $lineHeight19;
+
+        a {
+          text-decoration: none;
+          color: $white;
+          font-size: $fontSize16;
+          font-weight: $fontWeightSemiBold;
+          line-height: $lineHeight19;
+        }
 
         &:hover {
             cursor: pointer;
