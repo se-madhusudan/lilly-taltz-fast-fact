@@ -10,7 +10,7 @@
       </main>
       <rotate-lock v-if="userAgent.orientation === 'landscape' && userAgent.device.isPhone"></rotate-lock>
       <footer>
-        <brand-footer :navData="navData" @scroll="scrollTo" />
+        <brand-footer :footerData="footerData" :navData="navData" @scroll="scrollTo" />
       </footer>
     </section>
   </div>
@@ -65,6 +65,29 @@ export default {
         pdfIconDesktop: require('@/Assets/Img/icons/icon-pdf.svg'),
         pdfIconMobile: require('@/Assets/Img/icons/icon-pdf-mobile.svg')
       }
+      },
+      footerData: {
+        referenceList: {
+          title: 'References:',
+          references: "<b class='primary'>1.</b> Taltz. Prescribing Information. Lilly USA, LLC. <b class='primary'>2.</b> Data on file. Lilly USA, LLC. DOF-IX-US-0304. <b class='primary'>3.</b> Mease PJ, van der Heijde D, Ritchlin CT, et al; on behalf of SPIRIT-P1 Study Group. Ixekizumab, an interleukin-17A specific monoclonal antibody, for the treatment of biologic-naive patients with active psoriatic arthritis: results from the 24-week randomised, double-blind, placebo-controlled and active (adalimumab)-controlled period of the phase III trial SPIRIT-P1. Ann Rheum Dis. 2017;76:79-87. <b class='primary'>4.</b> Nash P, Kirkham B, Okada M, et al; on behalf of SPIRIT-P2 Study Group. Ixekizumab for the treatment of patients with active psoriatic arthritis and an inadequate response to tumour necrosis factor inhibitors: results from the 24-week randomised, double-blind, placebo-controlled period of the SPIRIT-P2 phase III trial. Lancet. 2017;389:2317-2327. <b class='primary'>5.</b> Nash P, Kirkham B, Okada M, et al; on behalf of SPIRIT-P2 Study Group. Ixekizumab for the treatment of patients with active psoriatic arthritis and an inadequate response to tumour necrosis factor inhibitors: results from the 24-week randomised, double-blind, placebo-controlled period of the SPIRIT-P2 phase III trial. Lancet. 2017;389:2317-2327. Supplementary appendix. <b class='primary'>6.</b> Data on file. Lilly USA, LLC. DOF-IX-US-0013. <b class='primary'>7.</b> Chandran V, van de Heijde D, Fleischmann R, et al. Ixekizumab treatment of biologic-naïve patients with active psoriatic arthritis: 3-year results from a phase III clinical trial (SPIRIT-P1). Rheumatology. 2020;59:2774-2784."
+        },
+        footerLinks: {
+          pp: {
+            link: 'https://www.haymarketmediaus.com/haymarket-media-inc-privacy-policy/',
+            text: 'Privacy Policy'
+          },
+          tc: {
+            link: 'https://www.haymarketmediaus.com/haymarket-media-inc-terms-and-conditions-of-service/',
+            text: 'Terms & Conditions'
+          }
+        },
+        footerContent: {
+          info1: 'Taltz® and its delivery device base are trademarks owned or licensed by Eli Lilly and Company, its subsidiaries, or affiliates. Humira® is a registered trademark of AbbVie Biotechnology Ltd.',
+          info2: 'If you have a question about a Lilly product, please call <b>1-800-LillyRx (1-800-545-5979).</b>',
+          info3: 'This site is intended for use by US healthcare professionals only.',
+          info4: 'PP-IX-US-6924 09/2024 © Lilly USA, LLC 2024. All rights reserved. ',
+          logo: require('@/Assets/Img/logos/logo-lilly-amc.svg')
+        }
       }
     }
   },
@@ -104,7 +127,7 @@ export default {
     }
   },
   mounted() {
-    var sectionviewarray = [".hero","#ACR","#Joint", "#Access"];
+    var sectionviewarray = [".hero","#ACR","#Joint", "#Access", '.references'];
     for (let i = 0; i < sectionviewarray.length; i++) {
       ScrollTrigger.create({
         trigger: sectionviewarray[i],

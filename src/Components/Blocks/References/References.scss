@@ -1,0 +1,16 @@
+.references {
+    &__title {
+        color: $secondaryColor;
+        font-size: $fontSize20;
+        font-weight: $fontWeightSemiBold;
+        line-height: $lineHeight100;
+        margin-bottom: 10px;
+    }
+
+    &__list {
+        color: $listItem;
+        font-size: $fontSize15;
+        font-weight: $fontWeightNormal;
+        line-height: $lineHeight23;
+    }
+}

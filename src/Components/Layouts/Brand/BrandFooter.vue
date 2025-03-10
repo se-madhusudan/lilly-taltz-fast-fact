@@ -1,22 +1,17 @@
 <template>
     <section class="brandFooter" id="brandFooter">
       <div class="contentWrap">
-        <!-- <ReferenceSection :ReferenceList="ReferenceList" /> -->
+        <ReferenceSection :referenceList="footerData.referenceList" />
       </div>
       <div class="brandFooter__upper">
         <div class="contentWrap">
           <div class="brandFooter__upperContent">
-            <div class="upperLeft">
-              <img src="../../../Assets/Img/logos/logo-lilly-amc.svg" alt="Lilly logo" />
-            </div>
-            <div class="upperRight">
-              <p>&copy; Lilly USA, LLC 2024. All rights reserved.</p>
-              <p>PP-TR-US-2124  10/2024</p>
-              <nav>
-                <ul class="desktopMenu">
-                  <li v-for="link in navData.menuItem" :key="link.id" v-html="link.anchorText" @click="emitScroll(link.anchor,link.anchorText)" :class="navData.currentSection == link.anchorText ? 'active' : ''"></li>
-                </ul>
-              </nav>
+            <p v-html="footerData.footerContent.info1"></p>
+            <p v-html="footerData.footerContent.info2"></p>
+            <p v-html="footerData.footerContent.info3"></p>
+            <p v-html="footerData.footerContent.info4"></p>
+            <div class="logo">
+              <img :src="footerData.footerContent.logo" alt="Lilly A Medical Company logo">
             </div>
           </div>
         </div>
@@ -28,8 +23,8 @@
         <div class="brandFooter__lowerContent">
           <p>&copy; 2024 Haymarket Media, Inc. <span class="text-noWrap">All rights reserved.</span></p>
           <p class="bottomLinks">
-            <a :href="urls.PP.link" target="_blank">{{ urls.PP.text }}</a> 
-            <a :href="urls.TC.link" target="_blank">{{urls.TC.text }}</a>
+            <a :href="footerData.footerLinks.pp.link" target="_blank">{{ footerData.footerLinks.pp.text }}</a> 
+            <a :href="footerData.footerLinks.tc.link" target="_blank">{{ footerData.footerLinks.tc.text }}</a>
           </p>
         </div>
       </div>
@@ -37,19 +32,20 @@
   </template>
   
   <script>
-  // import ReferenceSection from "@/Components/Blocks/Reference/ReferenceSection";
+  import ReferenceSection from "@/Components/Blocks/References/References";
   import { mapState } from "vuex";
   export default {
     name: "BrandFooter",
     components: {
-      // ReferenceSection,
+      ReferenceSection,
     },
     props: {
       navData: Object,
+      footerData: Object
     },
     data() {
       return {
-        
+         
       }
     },
     computed: {
