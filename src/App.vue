@@ -12,6 +12,7 @@
       <footer>
         <brand-footer :footerData="footerData" :navData="navData" @scroll="scrollTo" />
       </footer>
+      <ISI :isiData="isiData" />
     </section>
   </div>
 </template>
@@ -25,6 +26,7 @@ import { NoParentScrollMixin } from "@/mixins/NoParentScrollMixin";
 import HeaderBlock from "@/Components/Layouts/Header/Header";
 import HeaderTop from "@/Components/Layouts/Header/HeaderTop";
 import BrandFooter from "@/Components/Layouts/Brand/BrandFooter";
+import ISI from "@/Components/Blocks/ISI/ISI";
 import rotateLock from "@/Components/common-blocks/rotate-lock/rotate-lock";
 import ClickAnalytics from "@/mixins/ClickAnalytics";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -35,6 +37,7 @@ export default {
     "header-top": HeaderTop,
     "header-block": HeaderBlock,
     BrandFooter,
+    ISI,
     basePath: process.env.BASE_URL,
   },
   data() {
@@ -87,6 +90,55 @@ export default {
           info3: 'This site is intended for use by US healthcare professionals only.',
           info4: 'PP-IX-US-6924 09/2024 © Lilly USA, LLC 2024. All rights reserved. ',
           logo: require('@/Assets/Img/logos/logo-lilly-amc.svg')
+        }
+      },
+      isiData: {
+        indicationData: {
+          title: 'INDICATIONS',
+          des: 'Taltz is indicated for adults with active psoriatic arthritis (PsA), for adults with active ankylosing spondylitis (AS), and for adults with active non-radiographic axial spondyloarthritis (nr-axSpA) with objective signs of inflammation. Taltz is also indicated for patients aged 6 years or older with moderate-to-severe plaque psoriasis (PsO) who are candidates for systemic therapy or phototherapy.'
+        },
+        safetyData: {
+          title: 'IMPORTANT SAFETY INFORMATION',
+          contraindication: {
+            title: 'CONTRAINDICATIONS',
+            des: 'Taltz is contraindicated in patients with a previous serious hypersensitivity reaction, such as anaphylaxis, to ixekizumab or to any of the excipients.',
+          },
+          warnings: {
+            title: 'WARNINGS AND PRECAUTIONS',
+            infection: {
+              subtitle: 'Infections',
+              des: 'Taltz may increase the risk of infection. Serious infections have occurred. In clinical trials of adult patients with plaque psoriasis, the Taltz group had a higher rate of infections than the placebo group (27% vs 23%). A similar increase in risk of infection was seen in placebo-controlled trials of adult patients with psoriatic arthritis, ankylosing spondylitis, non-radiographic axial spondyloarthritis, and pediatric patients with plaque psoriasis. In the post-marketing setting, serious bacterial, viral, and fungal opportunistic infections have been reported in patients receiving IL-17 inhibitors, including Taltz. Instruct patients to seek medical advice if signs or symptoms of clinically important chronic or acute infection occur. If a patient develops a serious infection or is not responding to standard therapy, monitor the patient closely and discontinue Taltz until the infection resolves.'
+            },
+            evaluation: {
+              subtitle: 'Pre-Treatment Evaluation for Tuberculosis',
+              des: 'Evaluate patients for tuberculosis (TB) infection prior to initiating treatment with Taltz. Do not administer to patients with active TB infection. Initiate treatment of latent TB prior to administering Taltz. Consider anti-TB therapy prior to initiating Taltz in patients with a past history of latent or active TB in whom an adequate course of treatment cannot be confirmed. Patients receiving Taltz should be monitored closely for signs and symptoms of active TB during and after treatment.'
+            },
+            hypersentivity: {
+              subtitle: 'Hypersensitivity',
+              des: 'Serious hypersensitivity reactions, including angioedema and urticaria (each ≤0.1%), occurred in the Taltz group in clinical trials. Anaphylaxis, including cases leading to hospitalization, has been reported in post-marketing use with Taltz. If a serious hypersensitivity reaction occurs, discontinue Taltz immediately and initiate appropriate therapy.'
+            },
+            eczematous: {
+              subtitle: 'Eczematous Eruptions',
+              des: 'In the postmarketing setting, cases of severe eczematous eruptions, including atopic dermatitis-like eruptions, dyshidrotic eczema, and erythroderma were reported in patients receiving Taltz; some cases resulted in hospitalization. The onset of eczematous eruptions was variable, ranging from days to months after the first dose of Taltz. Treatment may need to be discontinued to resolve the eczematous eruption. Some patients with limited psoriasis treatment options were successfully treated for eczema while continuing Taltz.'
+            },
+            inflammatory: {
+              subtitle: 'Inflammatory Bowel Disease',
+              des: "Patients treated with Taltz may be at an increased risk of inflammatory bowel disease. In clinical trials, Crohn's disease and ulcerative colitis, including exacerbations, occurred at a greater frequency in the Taltz group than the placebo group. During Taltz treatment, monitor patients for onset or exacerbations of inflammatory bowel disease and if IBD occurs, discontinue Taltz and initiate appropriate medical management."
+            },
+            immunizations: {
+              subtitle: 'Immunizations',
+              des: 'Prior to initiating therapy with Taltz, consider completion of all age-appropriate immunizations according to current immunization guidelines. Avoid use of live vaccines in patients treated with Taltz.'
+            },
+            adverse: {
+              subtitle: 'ADVERSE REACTIONS',
+              des: 'Most common adverse reactions (≥1%) associated with Taltz treatment are injection site reactions, upper respiratory tract infections, nausea, and tinea infections. Overall, the safety profiles observed in adult patients with psoriatic arthritis, ankylosing spondylitis, non-radiographic axial spondyloarthritis, and pediatric patients with plaque psoriasis were consistent with the safety profile in adult patients with plaque psoriasis, with the exception of influenza and conjunctivitis in psoriatic arthritis and conjunctivitis, influenza, and urticaria in pediatric psoriasis.',
+              links: {
+                text: '<b>Please see <a href="https://cancertherapy.com/prescribing-information" target="_blank">Prescribing Information</a> and <a href="https://cancertherapy.com/medication-guide" target="_blank">Medication Guide</a>. See <a href="https:cancertherapy.com/instruction-use" target="_blank">Instructions for Use</a> included with the device.</b>',
+              },
+              taltz: '<b>[Taltz is available as an 80 mg/mL, 40 mg/0.5mL, 20 mg/0.25mL injection.]</b>',
+              ix: '<b>IX HCP ISI 20AUG2024</b>'
+            },
+          },
         }
       }
     }

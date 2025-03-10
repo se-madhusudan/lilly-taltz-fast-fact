@@ -1,0 +1,45 @@
+<div class="isi">
+    <div class="contentWrap">
+        <div class="isi__Wrapper">
+            <div class="isi__indication">
+                <h2 class="title" v-html="isiData.indicationData.title"></h2>
+                <p class="des" v-html="isiData.indicationData.des"></p>
+            </div>
+            <div class="isi__safety">
+                <h2 class="title" v-html="isiData.safetyData.title"></h2>
+    
+                <h3 class="heading" v-html="isiData.safetyData.contraindication.title"></h3>
+                <p class="des" v-html="isiData.safetyData.contraindication.des"></p>
+    
+                <h3 class="heading" v-html="isiData.safetyData.warnings.title"></h3>
+                <h4 class="subHeading" v-html="isiData.safetyData.warnings.infection.subtitle"></h4>
+                <p class="des" v-html="isiData.safetyData.warnings.infection.des"></p>
+    
+                <h4 class="subHeading" v-html="isiData.safetyData.warnings.evaluation.subtitle"></h4>
+                <p class="des" v-html="isiData.safetyData.warnings.evaluation.des"></p>
+    
+                <h4 class="subHeading" v-html="isiData.safetyData.warnings.hypersentivity.subtitle"></h4>
+                <p class="des" v-html="isiData.safetyData.warnings.hypersentivity.des"></p>
+    
+                <h4 class="subHeading" v-html="isiData.safetyData.warnings.eczematous.subtitle"></h4>
+                <p class="des" v-html="isiData.safetyData.warnings.eczematous.des"></p>
+    
+                <h4 class="subHeading" v-html="isiData.safetyData.warnings.inflammatory.subtitle"></h4>
+                <p class="des" v-html="isiData.safetyData.warnings.inflammatory.des"></p>
+    
+                <h4 class="subHeading" v-html="isiData.safetyData.warnings.immunizations.subtitle"></h4>
+                <p class="des" v-html="isiData.safetyData.warnings.immunizations.des"></p>
+    
+                <h4 class="subHeading" v-html="isiData.safetyData.warnings.adverse.subtitle"></h4>
+                <p class="des" v-html="isiData.safetyData.warnings.adverse.des"></p>
+    
+                <p class="des" v-html="isiData.safetyData.warnings.adverse.links.text"></p>
+    
+                <p class="des" v-html="isiData.safetyData.warnings.adverse.taltz"></p>
+    
+                <p class="des" v-html="isiData.safetyData.warnings.adverse.ix"></p>
+    
+            </div>
+        </div>
+    </div>
+</div>
