@@ -12,7 +12,7 @@
       <footer>
         <brand-footer :footerData="footerData" :navData="navData" @scroll="scrollTo" />
       </footer>
-      <ISI :isiData="isiData" />
+      <ISI :isiData="isiData" :footerData="footerData" />
     </section>
   </div>
 </template>

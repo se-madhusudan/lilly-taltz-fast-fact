@@ -3,6 +3,7 @@
   top: 35px;
   background: $white;
   box-shadow: $headerShadow;
+  max-width: $mainWrapper;
   width: 100%;
 
   @include media('<=phone'){
