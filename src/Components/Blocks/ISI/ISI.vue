@@ -1,15 +1,14 @@
 <template src="./ISI.html"></template>
 
 <script>
-  import BrandFooter from "@/Components/Layouts/Brand/BrandFooter";
   export default {
     name: 'ISI',
     props: {
         isiData: Object,
-        footerData: Object
+        footerData: Object,
+        currentSection: Number,
     },
     components: {
-      BrandFooter,
     },
     data() {
       return {

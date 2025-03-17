@@ -1,4 +1,4 @@
-<div class="isi" :class="{ active: isOpen }">
+<div class="isi" :class="{ active: isOpen, static: currentSection > 2 }">
     <div class="contentWrap">
         <div class="isi__Wrapper">
             <div class="isi__indication">
@@ -42,5 +42,4 @@
             </div>
         </div>
     </div>
-    <BrandFooter :footerData="footerData" />
 </div>

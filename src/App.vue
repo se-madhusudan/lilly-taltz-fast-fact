@@ -7,14 +7,12 @@
       </header>
       <main>
         <router-view />
+        <ISI :isiData="isiData" :footerData="footerData" :currentSection="navData.currentSection" />
       </main>
       <rotate-lock v-if="userAgent.orientation === 'landscape' && userAgent.device.isPhone"></rotate-lock>
       <footer>
         <brand-footer :footerData="footerData" :navData="navData" @scroll="scrollTo" />
       </footer>
-    </section>
-    <section class="isiWrap">
-      <ISI :isiData="isiData" :footerData="footerData" />
     </section>
   </div>
 </template>
@@ -135,7 +133,7 @@ export default {
               subtitle: 'ADVERSE REACTIONS',
               des: 'Most common adverse reactions (≥1%) associated with Taltz treatment are injection site reactions, upper respiratory tract infections, nausea, and tinea infections. Overall, the safety profiles observed in adult patients with psoriatic arthritis, ankylosing spondylitis, non-radiographic axial spondyloarthritis, and pediatric patients with plaque psoriasis were consistent with the safety profile in adult patients with plaque psoriasis, with the exception of influenza and conjunctivitis in psoriatic arthritis and conjunctivitis, influenza, and urticaria in pediatric psoriasis.',
               links: {
-                text: '<b>Please see <a class="secondary" href="https://cancertherapy.com/prescribing-information" target="_blank">Prescribing Information</a> and <a class="secondary" href="https://cancertherapy.com/medication-guide" target="_blank">Medication Guide</a>. See <a class="secondary" href="https:cancertherapy.com/instruction-use" target="_blank">Instructions for Use</a> included with the device.</b>',
+                text: '<b>Please see <a class="primary" href="https://cancertherapy.com/prescribing-information" target="_blank">Prescribing Information</a> and <a class="primary" href="https://cancertherapy.com/medication-guide" target="_blank">Medication Guide</a>. See <a class="primary" href="https:cancertherapy.com/instruction-use" target="_blank">Instructions for Use</a> included with the device.</b>',
               },
               taltz: '<b>[Taltz is available as an 80 mg/mL, 40 mg/0.5mL, 20 mg/0.25mL injection.]</b>',
               ix: '<b>IX HCP ISI 20AUG2024</b>'

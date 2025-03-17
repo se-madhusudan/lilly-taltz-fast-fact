@@ -68,7 +68,6 @@ body {
   box-sizing: content-box;
   overflow: hidden;
   padding-top: 100px;
-  padding-bottom: 210px;
   max-width: 1440px;
 
   @include media ('>tablet') {
@@ -78,11 +77,6 @@ body {
   @include media ('>mediumDesktop') {
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, .04), 0 8px 16px 0 rgba(0, 0, 0, .08);
   }
-}
-.isiWrap {
-  width: 100%;
-  margin: 0 auto;
-  max-width: 1440px;
 }
 
 .body {

@@ -15,8 +15,8 @@
     flex-direction: row-reverse;
     justify-content: space-between;
 
-    @include media('<=tablet') {
-        flex-direction: column;
+    @include media("<=tablet") {
+      flex-direction: column;
     }
   }
 
@@ -25,11 +25,11 @@
     max-width: 485px;
     height: auto;
 
-    @include media('<=tablet') {
-        flex: 95%;
-        max-width: 100%;
-        height: 80px;
-        overflow-y: scroll;
+    @include media("<=tablet") {
+      flex: 95%;
+      max-width: 100%;
+      height: 80px;
+      overflow-y: scroll;
     }
 
     .title {
@@ -57,9 +57,9 @@
     flex: 45%;
     max-width: 485px;
 
-    @include media('<=tablet') {
-        flex: 95%;
-        max-width: 100%;
+    @include media("<=tablet") {
+      flex: 95%;
+      max-width: 100%;
     }
 
     .heading {
@@ -109,11 +109,21 @@
   }
 }
 .active {
-    top: 120px;
-    height: calc(100vh - 120px);
+  top: 120px;
+  height: calc(100vh - 120px);
 
-    @include media('<=tablet') {
-        top: 105px;
-        height: calc(100vh - 105px);
-    }
+  @include media("<=tablet") {
+    top: 105px;
+    height: calc(100vh - 105px);
   }
+}
+
+.static {
+  position: static;
+  height: 100%;
+  overflow-y: hidden;
+
+  .isiIcon {
+    display: none;
+  }
+}
