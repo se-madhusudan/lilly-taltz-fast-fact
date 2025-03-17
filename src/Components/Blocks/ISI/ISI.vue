@@ -4,8 +4,6 @@
   export default {
     name: 'ISI',
     props: {
-        isiData: Object,
-        footerData: Object,
         currentSection: Number,
     },
     components: {
