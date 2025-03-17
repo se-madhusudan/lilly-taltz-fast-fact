@@ -1,65 +1,119 @@
 .isi {
-    border-top: 3px solid $primaryColor;
-    padding-top: 15px;
-    
-    &__Wrapper {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-between;
+  border-top: 3px solid $primaryColor;
+  padding-top: 15px;
+  max-width: $mainWrapper;
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  top: calc(100vh - 210px);
+  background: $white;
+  height: 210px;
+  overflow-y: scroll;
+
+  &__Wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+    @include media('<=tablet') {
+        flex-direction: column;
     }
+  }
 
-    &__indication {
-        flex: 45%;
-        max-width: 485px;
-    }
+  &__indication {
+    flex: 45%;
+    max-width: 485px;
+    height: auto;
 
-    &__safety {
-        flex: 45%;
-        max-width: 485px;
-
-       .heading {
-        color: #33632E;
-        font-size: $fontSize16;
-        font-weight: $fontWeightSemiBold;
-        line-height: normal;
-
-        &:nth-of-type(1) {
-            margin-top: 12px;
-        }
-        &:nth-of-type(2) {
-            margin-bottom: 15px;
-        }
-       }
-       .subHeading {
-        color: $des;
-        font-size: $fontSize16;
-        font-weight: $fontWeightSemiBold;
-        line-height: normal;
-        padding-top: 15px;
-        border-top: 1px solid $isiBdr;
-
-        &:nth-of-type(7) {
-            padding-top: 20px;
-            border-top: none;
-            color: $secondaryColor;
-        }
-       }
+    @include media('<=tablet') {
+        flex: 95%;
+        max-width: 100%;
+        height: 80px;
+        overflow-y: scroll;
     }
 
     .title {
-        color: $secondaryColor;
-        font-size: $fontSize20;
-        font-weight: $fontWeightSemiBold;
-        line-height: $lineHeight36;
-        padding-bottom: 12px;
-        border-bottom: 1px solid $isiBdr;
+      display: flex;
+      justify-content: space-between;
+
+      .isiIcon {
+        width: 26px;
+        height: 26px;
+        background: url("../../../Assets/Img/icons/icon-expand.svg") no-repeat;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .active {
+        width: 26px;
+        height: 26px;
+        background: url("../../../Assets/Img/icons/icon-collapse.svg") no-repeat;
+      }
+    }
+  }
+
+  &__safety {
+    flex: 45%;
+    max-width: 485px;
+
+    @include media('<=tablet') {
+        flex: 95%;
+        max-width: 100%;
     }
 
-    .des {
-        color: $listItem;
-        font-size: $fontSize15;
-        font-weight: $fontWeightNormal;
-        line-height: $lineHeight23;
-        margin: 10px 0 15px;
+    .heading {
+      color: #33632e;
+      font-size: $fontSize16;
+      font-weight: $fontWeightSemiBold;
+      line-height: normal;
+
+      &:nth-of-type(1) {
+        margin-top: 12px;
+      }
+      &:nth-of-type(2) {
+        margin-bottom: 15px;
+      }
     }
+    .subHeading {
+      color: $des;
+      font-size: $fontSize16;
+      font-weight: $fontWeightSemiBold;
+      line-height: normal;
+      padding-top: 15px;
+      border-top: 1px solid $isiBdr;
+
+      &:nth-of-type(7) {
+        padding-top: 20px;
+        border-top: none;
+        color: $secondaryColor;
+      }
+    }
+  }
+
+  .title {
+    color: $secondaryColor;
+    font-size: $fontSize20;
+    font-weight: $fontWeightSemiBold;
+    line-height: $lineHeight36;
+    padding-bottom: 12px;
+    border-bottom: 1px solid $isiBdr;
+  }
+
+  .des {
+    color: $listItem;
+    font-size: $fontSize15;
+    font-weight: $fontWeightNormal;
+    line-height: $lineHeight23;
+    margin: 10px 0 15px;
+  }
 }
+.active {
+    top: 120px;
+    height: calc(100vh - 120px);
+
+    @include media('<=tablet') {
+        top: 105px;
+        height: calc(100vh - 105px);
+    }
+  }

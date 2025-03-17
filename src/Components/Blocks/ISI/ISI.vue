@@ -10,7 +10,12 @@
     },
     components: {
       BrandFooter,
-    }
+    },
+    data() {
+      return {
+        isOpen: false,
+      }
+    },
   }
 </script>
 

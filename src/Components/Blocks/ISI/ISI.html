@@ -1,8 +1,8 @@
-<div class="isi">
+<div class="isi" :class="{ active: isOpen }">
     <div class="contentWrap">
         <div class="isi__Wrapper">
             <div class="isi__indication">
-                <h2 class="title" v-html="isiData.indicationData.title"></h2>
+                <h2 class="title"><span v-html="isiData.indicationData.title"></span><span class="isiIcon" :class="{ active: isOpen }" @click="isOpen = !isOpen"></span></h2>
                 <p class="des" v-html="isiData.indicationData.des"></p>
             </div>
             <div class="isi__safety">
