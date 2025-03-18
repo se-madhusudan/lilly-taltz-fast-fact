@@ -42,33 +42,6 @@ export default {
   },
   data() {
     return {
-      navData: {
-        showDropdown: false,
-        currentSection: 0,
-        menuItem: [
-        {
-          id: 1,
-          anchorText: "ACR Results",
-          anchor: "ACR",
-        },
-        {
-          id: 2,
-          anchorText: "Joint Symptom Results",
-          anchor: "Joint",
-        },
-        {
-          id: 3,
-          anchorText: "Access & Support",
-          anchor: "Access",
-        },
-      ],
-      piData: {
-        piText: 'Prescribing Information',
-        url: 'https://www.cancertherapy.com',
-        pdfIconDesktop: require('@/Assets/Img/icons/icon-pdf.svg'),
-        pdfIconMobile: require('@/Assets/Img/icons/icon-pdf-mobile.svg')
-      }
-      },
       footerData: {
         referenceList: {
           title: 'References:',
@@ -111,6 +84,9 @@ export default {
 
   computed: {
     ...mapState(["userAgent"]),
+    navData() {
+      return this.$route.meta.navData || {};
+    },
     isIE() {
       return this.userAgent.browser.name === "ie";
     },
