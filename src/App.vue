@@ -7,7 +7,8 @@
       </header>
       <main>
         <router-view />
-        <ISI :currentSection="navData.currentSection" />
+        <ISI :currentSection="navData.currentSection" :isFixedHidden="this.isStaticInViewport" />
+        <ISI :isStatic="true" />
       </main>
       <rotate-lock v-if="userAgent.orientation === 'landscape' && userAgent.device.isPhone"></rotate-lock>
       <footer>
@@ -42,6 +43,8 @@ export default {
   },
   data() {
     return {
+      hideFixedIsi: false,
+      isStaticInViewport: false,
       navData: {
         showDropdown: false,
         currentSection: 0,
@@ -130,7 +133,7 @@ export default {
     }
   },
   mounted() {
-    var sectionviewarray = [".hero","#ACR","#Joint", "#Access", '.references'];
+    var sectionviewarray = [".hero","#ACR","#Joint", "#Access", ".static", '#brandFooter'];
     for (let i = 0; i < sectionviewarray.length; i++) {
       ScrollTrigger.create({
         trigger: sectionviewarray[i],
@@ -139,6 +142,7 @@ export default {
         toggleActions: "restart pause reverse pause",
         onEnterBack: () => {
           var currentsection = i - 1;
+          // console.log('current section: ', currentsection);
           this.navData.currentSection = currentsection;
           if (currentsection == 1 || currentsection == 2 || currentsection == 3) {
             document.querySelector(".sectionHighlight").classList.add('active');
@@ -148,6 +152,7 @@ export default {
           } 
         },
         onEnter: () => {
+          // console.log('current section: ', i);
           this.navData.currentSection = i;
           if (i == 1 || i == 2 || i == 3) {
             document.querySelector(".sectionHighlight").classList.add('active');
@@ -158,6 +163,20 @@ export default {
         },
       });
     }
+
+    ScrollTrigger.create({
+      trigger: ".static",
+      start: "top bottom-=200px", // When the top of .static is 200px from the bottom of the viewport
+      end: "top bottom-=200px",  // Keeps it active in the same position
+      onEnter: () => {
+        // console.log("Green line reached 210px from bottom");
+        this.isStaticInViewport = true;
+      },
+      onLeaveBack: () => {
+        // console.log("Green line moved away");
+        this.isStaticInViewport = false;
+      }
+    });
   },
 };
 </script>

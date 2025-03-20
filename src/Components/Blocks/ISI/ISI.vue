@@ -5,6 +5,8 @@
     name: 'ISI',
     props: {
         currentSection: Number,
+        isStatic: Boolean,
+        isFixedHidden: Boolean,
     },
     components: {
     },
