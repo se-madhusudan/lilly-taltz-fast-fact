@@ -15,6 +15,19 @@
         isOpen: false,
       }
     },
+    methods:  {
+      toogleIsi () {
+        this.isOpen = !this.isOpen;
+        const body = document.getElementsByTagName('body')[0];
+        console.log('isOpen: ', this.isOpen)
+        if(this.isOpen) {
+          console.log('isOpen: ', this.isOpen)
+          body.style.overflowY = 'hidden';
+        } else {
+          body.style.overflowY = 'auto';
+        }
+      }
+    }
   }
 </script>
 

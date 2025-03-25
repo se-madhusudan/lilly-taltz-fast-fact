@@ -166,14 +166,12 @@ export default {
 
     ScrollTrigger.create({
       trigger: ".static",
-      start: "top bottom-=200px", // When the top of .static is 200px from the bottom of the viewport
-      end: "top bottom-=200px",  // Keeps it active in the same position
+      start: "top bottom-=200px",
+      end: "top bottom-=200px",
       onEnter: () => {
-        // console.log("Green line reached 210px from bottom");
         this.isStaticInViewport = true;
       },
       onLeaveBack: () => {
-        // console.log("Green line moved away");
         this.isStaticInViewport = false;
       }
     });
